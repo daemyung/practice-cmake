@@ -1,4 +1,4 @@
-# 최소 CMake 버전 요구사항 명시
+# 필요한 CMake 최소 버전 명시
 cmake_minimum_required(VERSION 3.0.0)
 
 # 프로젝트 이름 지정
