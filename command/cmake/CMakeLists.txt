@@ -1,0 +1,1 @@
+message(STATUS "cmake directory is added to build.")
