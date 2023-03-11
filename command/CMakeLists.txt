@@ -34,25 +34,25 @@ message("This is a " ${variable} "! ${variable}!")
 unset(variable)
 
 # 리스트 생성
-list(APPEND files foo.cpp bar.cpp baz.cpp qux.cpp)
+list(APPEND FILES foo.cpp bar.cpp baz.cpp qux.cpp)
 
 # 리스트 길이 조회
-list(LENGTH files num_files)
+list(LENGTH FILES NUM_FILES)
 
 # 리스트와 정보 출력
-message("File List[${num_files}]: ${files}")
+message("File List[${NUM_FILES}]: ${FILES}")
 
 # 리스트 검색
-list(FIND files baz.cpp baz_cpp_index)
+list(FIND FILES baz.cpp baz_cpp_index)
 
 # 리스트 검색 결과 출력
 message("baz.cpp is located in the ${baz_cpp_index} index.")
 
 # 리스트 정렬
-list(SORT files)
+list(SORT FILES)
 
 # 정렬된 리스트 출력
-message("Sorted File List: " ${files})
+message("Sorted File List: " ${FILES})
 
 # 조건문 처리
 if(APPLE)
@@ -66,8 +66,8 @@ else()
 endif()
 
 # 반복문
-foreach(file IN LISTS files)
-    message(${file} " is in the list")
+foreach(FILE IN LISTS FILES)
+    message(${FILE} " is in the list")
 endforeach()
 
 # 빌드에 포함할 소스 디렉토리를 추가
