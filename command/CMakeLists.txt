@@ -73,6 +73,9 @@ endforeach()
 # 빌드에 포함할 소스 디렉토리를 추가
 add_subdirectory(cmake)
 
+# 컴파일 옵션 추가
+add_compile_options(-Wall -Wextra)
+
 # 실행 타겟을 정의
 add_executable(foo src/foo.cpp)
 
@@ -88,7 +91,7 @@ set_target_properties(foo PROPERTIES
     MACOSX_BUNDLE YES
 )
 
-# 타겟을 링킹할 때 필요한 타겟을 지정
+# 타겟을 링킹할 때 필요한 타겟이나 라이브러리를 지정
 target_link_libraries(foo PRIVATE bar)
 
 # 타겟에 명시된 소스 파일을 추가
@@ -100,5 +103,5 @@ target_compile_definitions(foo PRIVATE NOMINMAX)
 # 타겟을 컴파일할 때 사용할 인클루드 디렉토리를 지정
 target_include_directories(bar PUBLIC lib/bar/include)
 
-# 타겟을 컴파일할 때 사용할 컴파일 옵션를 지정
-target_compile_options(bar PRIVATE -Wall -Wextra)
+# 타겟을 컴파일할 때 사용할 컴파일 옵션을 지정
+target_compile_options(bar PRIVATE -pedantic)
