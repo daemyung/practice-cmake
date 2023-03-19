@@ -33,6 +33,12 @@ message("This is a " ${variable} "! ${variable}!")
 # 변수 파괴
 unset(variable)
 
+# 옵션 정의
+option(BUILD_EXAMPLE "Enable build examples." ON)
+
+# 옵션 출력
+message(STATUS "Building examples is ${BUILD_EXAMPLE}")
+
 # 리스트 생성
 list(APPEND FILES foo.cpp bar.cpp baz.cpp qux.cpp)
 
