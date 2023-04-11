@@ -4,12 +4,15 @@ cmake_minimum_required(VERSION 3.0.0)
 # 프로젝트 이름 지정
 project(variable)
 
+# 변수 생성 및 출력
+set(I_AM_VARIABLE TRUE)
+message(STATUS ${I_AM_VARIABLE})
+
 # CMake 변수 출력
 message(STATUS "System Name: ${CMAKE_SYSTEM_NAME}")
 message(STATUS "System Version: ${CMAKE_SYSTEM_VERSION}")
 message(STATUS "C++ Compiler: ${CMAKE_CXX_COMPILER}")
 message(STATUS "Install Directory: ${CMAKE_INSTALL_PREFIX}")
-
 
 # CMAKE_SYSTEM_NAME을 사용하여 운영체제마다 다른 명령어 실행
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
@@ -32,6 +35,7 @@ elseif(LINUX)
 elseif(APPLE)
     message("OS is macOS.")
 elseif(ANDROID)
+    message("OS is Android.")
 else()
     message("OS is unknown.")
 endif()
