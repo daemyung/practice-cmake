@@ -19,12 +19,12 @@ if (APPLE)
 elseif(LINUX)
     target_sources(audio
     PRIVATE
-        src/apple/alsa.cpp
+        src/linux/alsa.cpp
     )
 elseif(WIN32)
     target_sources(audio
     PRIVATE
-        src/apple/wasapi.cpp
+        src/win32/wasapi.cpp
     )
 else()
     message(FATAL_ERROR "Your platform isn't supported.")
